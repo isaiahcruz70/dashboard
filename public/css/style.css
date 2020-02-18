@@ -1,0 +1,45 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    color: #636b6f;
+    
+}
+
+ul {
+    margin-right: 50px;
+}
+
+li {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+/* .card {
+    line-height: 2;
+} */
+
+.login {
+    line-height: 3;
+}
+
+.py-4 {
+    color:#636b6f;
+    border-radius: 50px;
+    background: linear-gradient(145deg, #fffffb, #dadbd4);
+    box-shadow:  20px 20px 60px #cecfc8, 
+             -20px -20px 60px #ffffff;
+}
+
+/* Start of login.blade.php */
+
+/* Start of queue.blade.php */
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
