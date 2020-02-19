@@ -13,6 +13,8 @@
 
 Auth::routes();
 
+Route::get('/vuln-add', 'VulnController@store');
+
 Route::get('/home', 'HomeController@index');
 
 Route::post('/submit-request', 'EmergencyRequestController@store');

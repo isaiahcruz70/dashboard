@@ -37,31 +37,11 @@
         <textarea rows="6" id="message" placeholder="Enter your message here" name="message"></textarea>
       </li>
       <li>
-        <p>Age</p>
-        <ul class="flex-inner">
+        
           <li>
-            <input type="checkbox" id="twenty-to-twentynine">
-            <label for="twenty-to-twentynine">20-29</label>
-          </li>
-          <li>
-            <input type="checkbox" id="thirty-to-thirtynine">
-            <label for="thirty-to-thirtynine">30-39</label>
-          </li>
-          <li>
-            <input type="checkbox" id="fourty-to-fourtynine">
-            <label for="fourty-to-fourtynine">40-49</label>
-          </li>
-          <li>
-            <input type="checkbox" id="fifty-to-fiftynine">
-            <label for="fifty-to-fiftynine">50-59</label>
-          </li>
-          <li>
-            <input type="checkbox" id="sixty-to-sixtynine">
-            <label for="sixty-to-sixtynine">60-69</label>
-          </li>
-          <li>
-            <input type="checkbox" id="other">
-            <label for="other">Other</label>
+          <label for="new-task">Vauln</label>  
+          <input name="vauln" type="text" id="new-task">
+          
           </li>
         </ul>
       </li>
@@ -93,7 +73,7 @@
     </ul>
   </form>
 </div> 
-
+<script src="public/js/index.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 @endsection
