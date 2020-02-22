@@ -11,7 +11,7 @@
     <a class="nav-link" href="request-queue">Request A Queue</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Finished Queues</a>
+    <a class="nav-link" href="finish-queues">Finished Queues</a>
   </li>
   <li class="nav-item">
     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>

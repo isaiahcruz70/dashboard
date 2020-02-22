@@ -12,7 +12,7 @@
       <a class="nav-link active" href="request-queue">Request A Queue</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Finished Queues</a>
+      <a class="nav-link" href="finish-queues">Finished Queues</a>
     </li>
     <li class="nav-item">
       <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
@@ -24,18 +24,18 @@
 <br>
   <form action="/submit-request" method="POST">
   @csrf
-    <ul class="flex-outer">
+    <ul class="flex-outer form-group">
       <li>
         <label for="first-name">First And Last Name</label>
-        <input type="text" id="first-name" placeholder="Enter your first name here" name="first">
+        <input class="form-control" type="text" id="first-name" placeholder="Enter your first name here" name="first">
       </li>
       <li>
         <label for="business-name">Business Name</label>
-        <input type="text" id="business-name" placeholder="Enter your business name here" name="business">
+        <input class="form-control" type="text" id="business-name" placeholder="Enter your business name here" name="business">
       </li>
       <li>
         <label for="email">Email</label>
-        <input type="email" id="email" placeholder="Enter your email here" name="email">
+        <input class="form-control" type="email" id="email" placeholder="Enter your email here" name="email">
       </li>
       <li>
       <label for="reason">Reason</label>
@@ -48,22 +48,14 @@
       </li>
       <li>
         <label for="phone">Phone</label>
-        <input type="tel" id="phone" placeholder="Enter your phone here" name="phone">
+        <input class="form-control" type="tel" id="phone" placeholder="Enter your phone here" name="phone">
       </li>
       <li>
         <label for="message">Message</label>
-        <textarea rows="6" id="message" placeholder="Enter your message here" name="message"></textarea>
+        <textarea class="form-control" rows="6" id="message" placeholder="Enter your message here" name="message"></textarea>
       </li>
-      <li>
-        
-          <li>
-          <label for="new-task">Vauln</label>  
-          <input name="vauln" type="text" id="new-task">
-          
-          </li>
         </ul>
-      </li>
-      <li>
+     
         <!-- Trigger the modal with a button -->
   <button type="submit" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Submit</button>
 

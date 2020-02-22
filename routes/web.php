@@ -13,6 +13,8 @@
 
 Auth::routes();
 
+Route::get('/finish-queues', 'FinishQueuesController@index');
+
 Route::get('/dashboard', 'DashboardController@index');
 
 Route::get('/vuln-add', 'VulnController@store');
