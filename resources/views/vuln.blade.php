@@ -3,34 +3,29 @@
 @section('content')
 
 <div class="container">
-        <div class="row">
-            <div class="col s12">
-                <div id="main" class="card">
-                    <div class="card-content">
-                        <span class="card-title">Task list</span>
-                        <div class="row">
-                        @csrf
-                            <form id="task-form" action="index.php">
-                                <div class="input-field col s12">
-                                    <input type="text" name="task" id="task" value="">
-                                    <label for="vuln">Add task</label> 
-                                </div>
-                                <input type="submit" value="Add Task" class="btn">
-                            </form>
-                        </div>                       
-                    </div>
-                    <div class="card-action">
-                        <h5 id="task-title">Tasks</h5>
-                        <div class="input-field col s12">
-                            <input type="text" name="filter" id="filter" value="">
-                            <label for="filter">Filter tasks</label> 
-                        </div>
-                        <ul class="collection"></ul>
-                        <a href="#" class="clear-tasks btn black">Clear tasks</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="panel panel-default panel-todo jsc-todo-list">
+    <div class="panel-heading">
+      <h2>Todo List</h2>
     </div>
-    <script src="public/js/index.js"></script>
+    <div class="panel-body">
+      <div class="input-group text-center">
+        <input type="text" class="form-control" v-model="input" placeholder="TODO入力欄" />
+        <!-- enterで追加する場合 -->
+      <!--     <input type="text" v-model="input" v-on:keyup.enter="addTodo" /> -->
+        <span class="input-group-btn">
+          <button class="btn btn-primary" v-on:click="addTodo">追加</button>
+          <button class="btn btn-default" v-on:click="deleteAllTodo">削除</button>
+        </span>
+      </div>
+      <ul class="list-group">
+        <li class="list-group-item" v-for="(item, index) in elements">
+          <label v-bind:class="{done: item.isChecked}" class="list-item-label">
+            <input type="checkbox" class="list-item-checkbox" v-model="item.isChecked" /><span class="list-item-text">{{item.input}}</span>
+          </label>
+          <div class="list-item-delete" v-on:click="deleteTodo(item)">削除</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
     @endsection
