@@ -25,13 +25,21 @@
   <form action="/submit-request" method="POST">
   @csrf
     <ul class="flex-outer form-group">
-      <li>
-        <label for="first-name">First And Last Name</label>
-        <input class="form-control" type="text" id="first-name" placeholder="Enter your first name here" name="first">
+    <li>
+        <label for="date">Date</label>
+        <input class="form-control" type="numbers" id="date" placeholder="Enter submission date" name="date">
+      </li>
+    <li>
+        <label for="rep-name">Rep. Name</label>
+        <input class="form-control" type="text" id="rep-name" placeholder="Enter your name here" name="rep-name">
+      </li>  
+    <li>
+        <label for="client-name">Clients Name</label>
+        <input class="form-control" type="text" id="client-name" placeholder="Enter your clients name here" name="client-name">
       </li>
       <li>
         <label for="business-name">Business Name</label>
-        <input class="form-control" type="text" id="business-name" placeholder="Enter your business name here" name="business">
+        <input class="form-control" type="text" id="business-name" placeholder="Enter your business name here" name="business-name">
       </li>
       <li>
         <label for="email">Email</label>
