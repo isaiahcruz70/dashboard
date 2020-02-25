@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class EmergencyRequestController extends Controller
 {
     public function store(Request $request){
-        dd($request);
+        return view('queue')
+        //  dd($request);
     }
 }

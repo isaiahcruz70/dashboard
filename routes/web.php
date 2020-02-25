@@ -13,19 +13,23 @@
 
 Auth::routes();
 
-Route::get('/finish-queues', 'FinishQueuesController@index');
+Route::post('/dashboard/request-queue', 'SubmitController@store');
+
+Route::resource('/dashboard/request-queue', 'SubmitController');
+
+Route::get('/dashboard/finish-queues', 'FinishQueuesController@index');
 
 Route::get('/dashboard', 'DashboardController@index');
 
-Route::get('/vuln-add', 'VulnController@store');
+Route::get('/dashboard/vuln-add', 'VulnController@store');
 
 Route::get('/home', 'HomeController@index');
 
-Route::post('/submit-request', 'EmergencyRequestController@store');
+// Route::post('/dashboard/submit-request', 'EmergencyRequestController@store');
 
-Route::get('/request-queue', 'SubmitController@request');
+// Route::get('/request-queue', 'SubmitController@request');
 
-Route::get('/submit-queue', 'SubmitController@submit');
+Route::get('/dashboard/submit-queue', 'SubmitController@submit');
 
 Route::get('/mysite', 'ProofsController@site');
 // Start of challenge one

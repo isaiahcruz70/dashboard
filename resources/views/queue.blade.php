@@ -6,13 +6,13 @@
 <div class="container">
   <ul class="nav nav-pills nav-fill">
     <li class="nav-item">
-      <a class="nav-link" href="dashboard">Home</a>
+      <a class="nav-link" href="/dashboard">Home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link active" href="request-queue">Request A Queue</a>
+      <a class="nav-link active" href="/dashboard/request-queue">Request A Queue</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="finish-queues">Finished Queues</a>
+      <a class="nav-link" href="/dashboard/finish-queues">Finished Queues</a>
     </li>
     <li class="nav-item">
       <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
@@ -22,7 +22,21 @@
 <br>
 <div class="container">
 <br>
-  <form action="/submit-request" method="POST">
+@if(count($errors) > 0)
+      <div class="alert alert-dander">
+        <ul>
+          @foreach($errors->all() as $error)
+          <li>{{ $error }}</li>
+          @endforeach
+        </ul>
+      </div>
+      @endif
+      @if(\Session::has('success'))
+      <div class="alert alert-success">
+        <p>{{\Session::get(success)}}</p>
+      </div>
+      @endif
+  <form action="{{url('dashboard/request-queue')}}" method="post">
   @csrf
     <ul class="flex-outer form-group">
     <li>
@@ -39,11 +53,11 @@
       </li>
       <li>
         <label for="business-name">Business Name</label>
-        <input class="form-control" type="text" id="business-name" placeholder="Enter your business name here" name="business-name">
+        <input class="form-control" type="text" id="business-name" placeholder="Enter their business name here" name="business-name">
       </li>
       <li>
         <label for="email">Email</label>
-        <input class="form-control" type="email" id="email" placeholder="Enter your email here" name="email">
+        <input class="form-control" type="email" id="email" placeholder="Enter their email here" name="email">
       </li>
       <li>
       <label for="reason">Reason</label>
@@ -56,7 +70,7 @@
       </li>
       <li>
         <label for="phone">Phone</label>
-        <input class="form-control" type="tel" id="phone" placeholder="Enter your phone here" name="phone">
+        <input class="form-control" type="tel" id="phone" placeholder="Enter there phone here" name="phone">
       </li>
       <li>
         <label for="message">Message</label>
@@ -78,7 +92,7 @@
         <h4 class="modal-title thankyou">Thank You For Your Request!</h4>
       </div>
       <div class="modal-body">
-        <p class="center"><h2 class="p-modal">Your request has been submitted in a queue and it will be assigned to your account representative. You will receive an email when your request is in assigned. </h2></p>
+        <p class="center"><h2 class="p-modal">Your request has been submitted in a queue and it will be assigned to your account representative. You will receive an email when your request is assigned. </h2></p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
